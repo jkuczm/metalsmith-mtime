@@ -4,9 +4,17 @@
   "description": "A Metalsmith plugin that adds files last modification times to their Metalsmith metadata.",
   "keywords": ["metalsmith","plugin","mtime","last","modified"],
   "main": "lib/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
   "license": "MIT",
   "author": "Jakub Kuczmarski",
   "repository": "git://github.com/jkuczm/metalsmith-mtime.git",
   "homepage": "https://github.com/jkuczm/metalsmith-mtime",
-  "bugs": "https://github.com/jkuczm/metalsmith-mtime/issues"
+  "bugs": "https://github.com/jkuczm/metalsmith-mtime/issues",
+  "devDependencies": {
+    "mocha": "^1.20.1",
+    "should": "^4.0.4",
+    "metalsmith": "^0.9.0"
+  }
 }
