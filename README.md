@@ -4,7 +4,10 @@ A [Metalsmith](http://metalsmith.io) plugin that adds files last modification
 times to their Metalsmith metadata.
 
 [![Build Status](https://travis-ci.org/jkuczm/metalsmith-mtime.svg?branch=master)](https://travis-ci.org/jkuczm/metalsmith-mtime)
-[![License: MIT](http://jkuczm.github.io/media/images/license-MIT-blue.svg)](https://github.com/jkuczm/metalsmith-mtime/blob/master/LICENSE)
+[![npm version](http://img.shields.io/npm/v/metalsmith-mtime.svg)](https://www.npmjs.org/package/metalsmith-mtime)
+[![Dependency Status](https://david-dm.org/jkuczm/metalsmith-mtime.svg)](https://david-dm.org/jkuczm/metalsmith-mtime)
+[![devDependency Status](https://david-dm.org/jkuczm/metalsmith-mtime/dev-status.svg)](https://david-dm.org/jkuczm/metalsmith-mtime#info=devDependencies)
+[![License MIT](http://img.shields.io/npm/l/metalsmith-mtime.svg)](https://github.com/jkuczm/metalsmith-mtime/blob/master/LICENSE)
 
 
 ## Javascript Usage
