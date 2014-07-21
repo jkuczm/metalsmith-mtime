@@ -10,6 +10,13 @@ times to their Metalsmith metadata.
 [![License MIT](http://img.shields.io/npm/l/metalsmith-mtime.svg)](https://github.com/jkuczm/metalsmith-mtime/blob/master/LICENSE)
 
 
+## Installation
+
+```sh
+$ npm install metalsmith-mtime
+```
+
+
 ## Javascript Usage
 
 ```js
