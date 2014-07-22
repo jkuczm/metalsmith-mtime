@@ -66,7 +66,7 @@ describe('metalsmith-mtime addAllMtimes', function () {
   });
 
 
-  it('should pass fs errors', function (done) {
+  it('should pass generic fs errors', function (done) {
 
     var files = {
       'fakeFileName': { contents: 'Fake contents.' }
@@ -115,6 +115,39 @@ describe('metalsmith-mtime addAllMtimes', function () {
       files.should.have.property('fakeFileName1')
         .which.not.have.property('mtime');
       files.should.have.property('fakeFileName2')
+        .which.not.have.property('mtime');
+
+      done();
+    }
+  });
+
+
+  it('should skip non-existing files', function (done) {
+
+    var files = {
+      'nonExistingFile': { contents: 'Fake contents.' }
+    };
+
+    function FakeENOENTError(message) {
+      this.name = 'FakeENOENTError';
+      this.message = message || 'Fake ENOENT Error';
+      this.code = 'ENOENT';
+      this.errno = 34;
+    }
+    FakeENOENTError.prototype = new Error();
+    FakeENOENTError.prototype.constructor = FakeENOENTError;
+
+    sinon.stub(fs, 'stat')
+      .withArgs('nonExistingFile').callsArgWith(1, new FakeENOENTError());
+
+    addAllMtimes(files, fakeMetalsmith, testFiles);
+
+    function testFiles(err) {
+      fs.stat.restore();
+
+      should.not.exist(err);
+
+      files.should.have.property('nonExistingFile')
         .which.not.have.property('mtime');
 
       done();
