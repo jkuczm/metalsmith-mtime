@@ -33,4 +33,27 @@ describe('acceptance: metalsmith-mtime', function () {
       done();
     }
   });
+
+
+  it('should not report errors for non-existing files', function (done) {
+    /* jshint newcap: false */
+
+    function fakeRougePlugin(files, metalsmith, done) {
+      setImmediate(done);
+
+      files['nonExisting.html'] = {
+        contents: 'Mock contents.'
+      };
+    }
+
+    Metalsmith('test/fixture')
+      .use(fakeRougePlugin)
+      .use(mtime())
+      .build(testNoError);
+
+    function testNoError(err, files) {
+      should.not.exist(err);
+      done();
+    }
+  });
 });
