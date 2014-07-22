@@ -11,6 +11,18 @@ times to their Metalsmith metadata.
 [![License MIT](http://img.shields.io/npm/l/metalsmith-mtime.svg)](https://github.com/jkuczm/metalsmith-mtime/blob/master/LICENSE)
 
 
+This plugin iterates over Metalsmith `files` and adds `mtime` property to
+metadata of each entry in `files` that corresponds to file existing in
+filesystem. Value of this property is an instance of `Date` representing files
+last modification time.
+
+`mtime` property can be used e.g. in a template
+(here we use [swig](https://paularmstrong.github.io/swig/)):
+```
+Last modified: {{ mtime|date('Y.m.d H:i') }}
+```
+
+
 ## Installation
 
 ```sh
@@ -18,7 +30,9 @@ $ npm install metalsmith-mtime
 ```
 
 
-## Javascript Usage
+## Usage
+
+### JavaScript
 
 ```js
 var mtime = require('metalsmith-mtime');
@@ -26,11 +40,7 @@ var mtime = require('metalsmith-mtime');
 metalsmith.use(mtime()));
 ```
 
-That will add a `mtime` property to metadata of each file.
-Value of this property will be an instance of `Date`.
-
-
-## CLI Usage
+### CLI
 
 Add the `metalsmith-mtime` key to your `metalsmith.json` plugins:
 
