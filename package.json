@@ -5,7 +5,8 @@
   "keywords": ["metalsmith","plugin","mtime","last","modified"],
   "main": "lib/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "./node_modules/.bin/mocha",
+    "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "license": "MIT",
   "author": "Jakub Kuczmarski",
@@ -20,6 +21,8 @@
     "mocha": "^1.20.1",
     "should": "^4.0.4",
     "sinon": "^1.10.3",
+    "istanbul": "^0.3.0",
+    "coveralls": "^2.11.1",
     "metalsmith": "^0.9.0"
   }
 }
