@@ -1,3 +1,16 @@
+# DEPRECATED
+
+This plugin is deprecated, its functionality is now fully integrated into
+Metalsmith core.
+
+Since version
+[0.10.0](https://github.com/segmentio/metalsmith/releases/tag/0.10.0)
+Metalsmith adds full file
+[stats](http://nodejs.org/api/fs.html#fs_class_fs_stats) to metadata.
+If you're using `metalsmith-mtime` with 0.10, or newer, version of Metalsmith,
+replace `mtime`, in your code, with `stats.mtime` and remove
+`"metalsmith-mtime"` from dependencies.
+
 # metalsmith-mtime
 
 A [Metalsmith](http://metalsmith.io) plugin that adds files last modification
