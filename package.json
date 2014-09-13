@@ -1,7 +1,7 @@
 {
   "name": "metalsmith-mtime",
-  "version": "0.0.2",
-  "description": "A Metalsmith plugin that adds files last modification times to their Metalsmith metadata.",
+  "version": "0.0.3",
+  "description": "DEPRECATED A Metalsmith plugin that adds files last modification times to their Metalsmith metadata.",
   "keywords": ["metalsmith","plugin","mtime","last","modified"],
   "main": "lib/index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   "bugs": "https://github.com/jkuczm/metalsmith-mtime/issues",
   "dependencies": {
     "async": "^0.9.0",
-    "debug": "^1.0.3"
+    "debug": ">=1.0.3 <3.0.0"
   },
   "devDependencies": {
     "mocha": "^1.20.1",
